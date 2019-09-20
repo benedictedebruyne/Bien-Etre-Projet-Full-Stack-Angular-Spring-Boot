@@ -1,0 +1,52 @@
+<div class="card offset-lg-2 col-lg-8">
+  <div class="card-header text-white" style="background-color: #663366">
+    <h4>Login</h4>
+  </div>
+  <div class="card-body">
+    <div class="container-fluid">
+      <form [formGroup]="form" (ngSubmit)="onLogin(form.value)" novalidate>
+        <div class="form-group row">
+          <div class="col-lg-12">
+            <input formControlName="username" type="text" class="form-control" name="" aria-describedby="helpId"
+              placeholder="username">
+          </div>
+          <div *ngIf="form.get('username').touched && form.get('username').invalid" class="col-lg-5 text text-danger">
+            <div> Le username est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-lg-12">
+            <input formControlName="password" type="password" class="form-control" name="" aria-describedby="helpId"
+              placeholder="password">
+          </div>
+          <div *ngIf="form.get('password').touched && form.get('password').invalid" class="col-lg-5 text text-danger">
+            <div> Le mot de passe est obligatoire</div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="offset-lg-3 col-lg-8">
+            <button type="submit" class="btn btn-primary" style="background-color: #663366" [disabled]="form.invalid">Se
+              connecter</button>
+            &nbsp;&nbsp;
+            <button type="reset" class="btn btn-primary" style="background-color: #663366">Réinitialiser</button>
+          </div>
+        </div>
+        <hr>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-3 mt-1">Nouveau sur Ostinato8?</div>
+                <div class="col-xs-1 ml-2">
+                  <button type="signup" class="btn btn-primary" style="background-color: #663366" [routerLink]="['/signup']">S'inscrire</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

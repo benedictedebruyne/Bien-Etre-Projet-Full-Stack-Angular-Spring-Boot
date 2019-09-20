@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+$fa-font-path: '../node_modules/font-awesome/fonts/';
+@import '~font-awesome/scss/font-awesome';
+
+
+
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+
+
+@import '~primeicons/primeicons.css' ;
+@import '~primeng/resources/themes/nova-light/theme.css' ;
+@import '~primeng/resources/primeng.min.css' ;

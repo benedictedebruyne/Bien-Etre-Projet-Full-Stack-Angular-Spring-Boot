@@ -1,0 +1,94 @@
+<div class="card offset-lg-2 col-lg-8">
+  <div class="offset-lg-2 col-lg-8">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <p style="color: #e90691; font-size:24px"><b>Bénédicte Debruyne</b></p>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td><i class="fa fa-globe" aria-hidden="true" style="font-size:24px"></i></td>
+                    <td>Avenue
+                      Edmond Parmentier, 240/3<br>
+                      1150 Bruxelles</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-at" aria-hidden="true" style="font-size:24px"></i></td>
+                    <td>ostinato8@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-mobile" aria-hidden="true" style="font-size:36px"></i></td>
+                    <td>+32 495 55 10 91</td>
+                  </tr>
+                </tbody>
+              </table>
+            </ul>
+          </td>
+          <td><img src="assets/images/contact.jpg" class="img-fluid" alt="Responsive image"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <div class="card-header text-white" style="background-color: #663366">
+    <h4>Votre message</h4>
+  </div>
+  <div class="card-body">
+    <div class="container-fluid">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" novalidate>
+        <div class="form-group row">
+          <div class="col-lg-12">
+            <input formControlName="username" type="text" class="form-control" name="" aria-describedby="helpId"
+              placeholder="Nom">
+          </div>
+          <div *ngIf="form.get('username').touched && form.get('username').invalid" class="col-lg-5 text text-danger">
+            <div> Le nom est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-lg-12">
+            <input formControlName="email" type="email" class="form-control" name="" aria-describedby="helpId"
+              placeholder="Email">
+          </div>
+          <div *ngIf="form.get('email').touched && form.get('email').invalid" class="col-lg-5 text text-danger">
+            <div> L'adresse email est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-lg-12">
+            <input formControlName="object" type="text" class="form-control" name="" aria-describedby="helpId"
+              placeholder="Objet">
+          </div>
+          <div *ngIf="form.get('object').touched && form.get('object').invalid" class="col-lg-5 text text-danger">
+            <div> L'objet est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-lg-12">
+            <textarea formControlName="message" type="text" class="form-control" name="" aria-describedby="helpId"
+              placeholder="Message"></textarea>
+          </div>
+          <div *ngIf="form.get('message').touched && form.get('message').invalid" class="col-lg-5 text text-danger">
+            <div> Le message est obligatoire</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-lg-8">
+            <button type="submit" class="btn btn-primary" style="background-color: #663366"
+              [disabled]="form.invalid">Envoyer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 text-left"><a class="nav-link" [routerLink]="['/quisuisje']"
+        routerLinkActive="router-link-active" (click)="hautPage()">Qui suis-je?</a></div>
+    <div class="col-md-4 text-center"><a class="nav-link" (click)="hautPage()"
+        style="color:#527BFF; cursor: pointer">Haut de la page</a></div>
+    <div class="col-md-4 col-md-offset-4 text-right"></div>
+  </div>
+
+</div>

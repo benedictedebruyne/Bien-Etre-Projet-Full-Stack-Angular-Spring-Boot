@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="card col-lg-3">
+    <div class="card-header bg-primary text-white text-center">Rendez-vous pour <strong>{{getJwtClaim('sub')}}</strong></div>
+    <div class="card-body">
+      <div class="container-fluid">
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" novalidate>
+          <div class="form-group row">
+            <div class="col-sx-12">
+              <input formControlName="comment" type="text" class="form-control" name="" aria-describedby="helpId"
+                placeholder="RDV: Prénom et nom">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sx-4">
+              <select formControlName="type">
+                <option value="" disabled>Type</option>
+                <option>Chant prénatal (collectif)</option>
+                <option>Chant prénatal (individuel)</option>
+                <option>Kinésiologie</option>
+                <option>Massage</option>
+              </select>
+            </div>
+            <div *ngIf="form.get('type').touched && form.get('type').invalid" class="col-sx-5 text text-danger">
+              <div> Le type de rendez-vous est obligatoire</div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sx-4">
+              <p-calendar formControlName="date" [(ngModel)]="value" showTime="true" hourFormat="24" formControlName="date" dateFormat="d/m/yy"
+                [minDate]="minDateValue" placeholder="Date"></p-calendar>
+            </div>
+            <div *ngIf="form.get('date').touched && form.get('date').invalid" class="col-sx-5 text text-danger">
+              <div> La date est obligatoire</div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sx-3 col-sx-8">
+              <button type="submit" class="btn btn-primary">OK</button>
+              &nbsp;&nbsp;
+              <button type="reset" class="btn btn-primary">Annuler</button>
+            </div>
+            <div *ngIf="resultOnSubmit">
+              <p>{{messageReceived}}</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id='global' class='col-lg-9'>
+    <div id='calendar-container' class='col-sx-12 '>
+      <div id='calendar' style="display: inline-block;">
+        <full-calendar #calendar *ngIf="options" defaultView="timeGridWeek" minTime="08:00:00" maxTime="20:00:00"
+          locale=beLocale weekNumberCalculation="ISO" [buttonText]="{
+              today: 'aujourdhui',
+              month: 'mois',
+              week: 'semaine',
+              day: 'jour',
+              list: 'liste'
+            }" allDayText="journée entière" [customButtons]="{
+              filter: {
+                text: 'filter',
+                click: 'open()'
+                }
+            }" [header]="{
+              center: 'title',
+              left: 'dayGridMonth,timeGridWeek,timeGridDay',
+              right: 'prev, next today'
+            }" [plugins]="calendarPlugins" [events]=myEvents>
+        </full-calendar>
+      </div>
+    </div>
+  </div>
+</div>

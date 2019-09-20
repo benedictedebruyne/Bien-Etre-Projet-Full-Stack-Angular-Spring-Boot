@@ -1,0 +1,54 @@
+<div style="text-align: center; font-size: 12pt; color: #ab5494;">
+  <br>
+  <b>Bonjour et bienvenue sur le site</b>
+  &nbsp;<span style="color: #ff0099;"><b>Ostinato</b></span>
+  <br><br>
+  <img src="assets/images/acceuil_definitif.png" />
+</div>
+<div class="container-fluid">
+  <div class="col col-lg-10 offset-lg-1">
+    <div class="offset-lg-1" style="text-align: left; color: #808080; font-family: georgia,palatino; font-size: 12pt;">
+      <br>Je suis ravie de vous accueillir sur mon site!<br>
+      <br>Pourquoi Ostinato?<br>
+      <br>Il y a deux raisons principales:<br>
+      <br>
+      <ul>
+        <li>La première est que la musique - et le chant en particulier - me fascine et fait partie de ma vie depuis
+          que je suis toute
+          petite. J'ai donc commencé à chercher un nom en lien avec cette passion.
+        </li>
+        <br>
+        <li>
+          La deuxième raison est également liée à la musique et est encore plus sentimentale puisque "Ostinato" était
+          le nom de la chorale dans laquelle j'étais étant enfant. Malheureusement, cette chorale a cessé d'exister
+          il y a bien longtemps.
+        </li>
+      </ul>
+      <br>
+      Voici la définition d'Ostinato telle que trouvée sur <a href="http://fr.wikipedia.org/wiki/Ostinato"
+        target="_blank">Wikipedia</a>:
+      <br><br>
+      L'<strong style="color: #ff0099;">ostinato</strong> est un procédé de
+      composition musicale consistant à répéter obstinément une formule rythmique, mélodique ou harmonique
+      accompagnant de manière immuable les différents éléments thématiques durant tout le morceau.
+      <br><br>
+      Pour compléter cette définition, j'ai décidé de mettre "Ostinato" dans une clé de sol avec deux des
+      activités principales que je pratique actuellement à Bruxelles:
+      <br><br>
+      <ul style="text-align: left;">
+        <li>la <a [routerLink]="['/kinesiologie']" routerLinkActive="router-link-active" (click)="hautPage()">
+            kinésiologie</a>
+        </li>
+        <li>le <a [routerLink]="['/chantprenatal']" routerLinkActive="router-link-active" (click)="hautPage()"> chant
+            prénatal&nbsp;</a></li>
+      </ul>
+    </div>
+    <br /> <br /> <br /> <br /> <br />
+    <div class="row">
+      <div class="col-md-4 text-left"></div>
+      <div class="col-md-4 text-center"><a class="nav-link" (click)="hautPage()"
+          style="color:#527BFF; cursor: pointer">Haut
+          de la page</a></div>
+      <div class="col-md-4 col-md-offset-4 text-right"><a class="nav-link" [routerLink]="['/chantprenatal']"
+          routerLinkActive="router-link-active" (click)="hautPage()">Chant prénatal</a></div>
+    </div>

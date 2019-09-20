@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Calendrier</h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+              <th>Date</th>
+              <th>De</th>
+              <th>&agrave;</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+            <tbody>
+          <tr *ngFor="let item of data">
+              <td [ngStyle]="{color: item.backgroundColor}">{{item.start.substring(8,10)+'/'+item.start.substring(5,7)}}</td>
+              <td [ngStyle]="{color: item.backgroundColor}">{{item.start.substring(11,16)}}</td>
+              <td [ngStyle]="{color: item.backgroundColor}">{{item.end.substring(11,16)}}</td>
+              <strong><td [ngStyle]="{color: item.backgroundColor}">{{item.title}}</td></strong>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-header text-white" style="background-color: #663366">
+      <h4>Inscrivez-vous à la newsletter</h4>
+    </div>
+    <div class="card-body">
+      <div class="container-fluid">
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" novalidate>
+          <div class="form-group row">
+            <div class="col-lg-12">
+              <input formControlName="username" type="text" class="form-control" name="" aria-describedby="helpId"
+                placeholder="Nom">
+            </div>
+            <div *ngIf="form.get('username').touched && form.get('username').invalid" class="col-lg-5 text text-danger">
+              <div> Le nom est obligatoire</div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-lg-12">
+              <input formControlName="email" type="email" class="form-control" name="" aria-describedby="helpId"
+                placeholder="Email">
+            </div>
+            <div *ngIf="form.get('email').touched && form.get('email').invalid" class="col-lg-5 text text-danger">
+              <div> L'adresse email est obligatoire</div>
+            </div>
+          </div>
+          <div class="form-group row">
+              <div class="col-lg-8">
+                <button type="submit" class="btn btn-primary" style="background-color: #663366"
+                  [disabled]="form.invalid">Envoyer</button>
+              </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-lg-8">
+                  Vous affirmez avoir pris connaissance de notre Politique de confidentialité.  Vous pouvez vous désinscrire à tout moment à l'aide des liens de désinscription ou en me contactant à l'adresse ostinato8@gmail.com
+                </div>
+              </div>
+              </form>
+      </div>
+    </div>
+
