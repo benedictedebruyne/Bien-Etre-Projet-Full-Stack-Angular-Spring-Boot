@@ -41,7 +41,7 @@ export class RendezvousComponent implements OnInit {
   @ViewChild('external', { static: true }) external: ElementRef;
   ngOnInit() {
     this.form = this.formBuilder.group({
-      comment: [''],
+      comment: ['', Validators.required],
       type: ['', Validators.required],
       date: ['', Validators.required]
     });
@@ -133,6 +133,9 @@ export class RendezvousComponent implements OnInit {
 
       }
     );
+  }
+  hautPage() {
+    window.scrollTo(0, 0);
   }
 
 

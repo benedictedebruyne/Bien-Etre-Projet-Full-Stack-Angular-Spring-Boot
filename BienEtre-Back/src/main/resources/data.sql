@@ -24,32 +24,30 @@ insert into appointment_types (id, name, duration, individual, background_color,
 insert into appointment_types (id, name, duration, individual, background_color, text_color) values ('SR', 'Séminaire RDV', 1439, false, '#BF7EBF', '#000000');
 
 
-insert into appointments (start, end, type_id, user_id) values ('2019-09-08T09:00:00', '2019-09-08T12:00:00', 'K', 4);
 insert into appointments (start, end, type_id, user_id) values ('2019-10-08T09:00:00', '2019-10-08T12:00:00', 'K', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-10-08T09:00:00', '2019-10-08T10:00:00', 'KR', 2);
-insert into appointments (start, end, type_id, user_id) values ('2019-10-08T10:00:00', '2019-10-08T11:00:00', 'KR', 3);
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-10-08T09:00:00', '2019-10-08T10:00:00', 'KR', 2, 'user2');
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-10-08T10:00:00', '2019-10-08T11:00:00', 'KR', 3, 'user3');
 insert into appointments (start, end, type_id, user_id) values ('2019-11-04T09:00:00', '2019-11-04T12:00:00', 'K', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-11-04T09:00:00', '2019-11-04T10:00:00', 'KR', 3);
-insert into appointments (start, end, type_id, user_id) values ('2019-11-04T10:30:00', '2019-11-04T11:30:00', 'KR', 1);
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-11-04T09:00:00', '2019-11-04T10:00:00', 'KR', 3, 'user3');
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-11-04T10:30:00', '2019-11-04T11:30:00', 'KR', 1, 'user1');
 insert into appointments (start, end, type_id, user_id) values ('2019-11-05T09:00:00', '2019-11-05T10:00:00', 'C', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-11-05T09:00:00', '2019-11-05T10:00:00', 'CR', 4);
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-11-05T09:00:00', '2019-11-05T10:00:00', 'CR', 2, 'user2');
 insert into appointments (start, end, type_id, user_id) values ('2019-09-30T15:00:00', '2019-09-30T16:30:00', 'C', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-09-30T15:00:00', '2019-09-30T16:30:00', 'CR', 2);
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-09-30T15:00:00', '2019-09-30T16:30:00', 'CR', 2, 'user2');
 insert into appointments (start, end, type_id, user_id) values ('2019-09-30T09:00:00', '2019-09-30T12:00:00', 'K', 4);
 insert into appointments (start, end, type_id, user_id) values ('2019-10-01T09:00:00', '2019-10-01T12:00:00', 'K', 4);
 insert into appointments (start, end, type_id, user_id) values ('2019-10-01T14:00:00', '2019-10-01T18:00:00', 'K', 4);
 insert into appointments (start, end, type_id, user_id) values ('2019-10-02T09:00:00', '2019-10-02T12:00:00', 'K', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-10-02T09:00:00', '2019-10-02T10:00:00', 'KR', 2);
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-10-02T09:00:00', '2019-10-02T10:00:00', 'KR', 2, 'user2');
 insert into appointments (start, end, type_id, user_id) values ('2019-10-02T14:00:00', '2019-10-02T18:00:00', 'M', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-10-02T14:00:00', '2019-10-02T15:30:00', 'MR', 3);
-insert into appointments (start, end, type_id, user_id) values ('2019-10-02T16:00:00', '2019-10-02T17:30:00', 'MR', 1);
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-10-02T14:00:00', '2019-10-02T15:30:00', 'MR', 3, 'user3');
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-10-02T16:00:00', '2019-10-02T17:30:00', 'MR', 1, 'user1');
 insert into appointments (start, end, type_id, user_id) values ('2019-10-03T18:00:00', '2019-10-03T19:30:00', 'C', 4);
 insert into appointments (start, end, type_id, user_id, all_day) values ('2019-10-04T00:00:00', '2019-10-04T23:59:59', 'S', 4, true);
 insert into appointments (start, end, type_id, user_id, all_day) values ('2019-10-05T00:00:00', '2019-10-04T23:59:59', 'S', 4, true);
 insert into appointments (start, end, type_id, user_id, all_day) values ('2019-10-06T00:00:00', '2019-10-04T23:59:59', 'S', 4, true);
 insert into appointments (start, end, type_id, user_id) values ('2019-12-09T09:00:00', '2019-12-09T12:00:00', 'K', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-12-09T09:00:00', '2019-12-09T10:00:00', 'KR', 2);
-insert into appointments (start, end, type_id, user_id) values ('2019-12-09T11:00:00', '2019-12-09T12:00:00', 'KR', 1);
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-12-09T09:00:00', '2019-12-09T10:00:00', 'KR', 2, 'user2');
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-12-09T11:00:00', '2019-12-09T12:00:00', 'KR', 1, 'user1');
 insert into appointments (start, end, type_id, user_id) values ('2019-10-03T09:00:00', '2019-10-03T12:00:00', 'I', 4);
-insert into appointments (start, end, type_id, user_id) values ('2019-10-03T11:00:00', '2019-10-03T12:00:00', 'IR', 1);
-
+insert into appointments (start, end, type_id, user_id, comment) values ('2019-10-03T11:00:00', '2019-10-03T12:00:00', 'IR', 1, 'user1');

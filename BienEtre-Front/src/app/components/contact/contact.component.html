@@ -3,30 +3,36 @@
     <table>
       <tbody>
         <tr>
-          <td>
-            <ul>
-              <p style="color: #e90691; font-size:24px"><b>Bénédicte Debruyne</b></p>
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td><i class="fa fa-globe" aria-hidden="true" style="font-size:24px"></i></td>
-                    <td>Avenue
-                      Edmond Parmentier, 240/3<br>
-                      1150 Bruxelles</td>
-                  </tr>
-                  <tr>
-                    <td><i class="fa fa-at" aria-hidden="true" style="font-size:24px"></i></td>
-                    <td>ostinato8@gmail.com</td>
-                  </tr>
-                  <tr>
-                    <td><i class="fa fa-mobile" aria-hidden="true" style="font-size:36px"></i></td>
-                    <td>+32 495 55 10 91</td>
-                  </tr>
-                </tbody>
-              </table>
-            </ul>
-          </td>
-          <td><img src="assets/images/contact.jpg" class="img-fluid" alt="Responsive image"></td>
+          <!-- <div class="container-fluid">
+            <div class="col col-lg-10"> -->
+              <td>
+                <ul>
+                  <p style="color: #e90691; font-size:24px"><b>Bénédicte Debruyne</b></p>
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td><i class="fa fa-globe" aria-hidden="true" style="font-size:24px"></i></td>
+                        <td>Avenue
+                          Edmond Parmentier, 240/3<br>
+                          1150 Bruxelles</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-at" aria-hidden="true" style="font-size:24px"></i></td>
+                        <td>ostinato8@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-mobile" aria-hidden="true" style="font-size:36px"></i></td>
+                        <td>+32 495 55 10 91</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </ul>
+              </td>
+            <!-- </div>
+            <div class="col col-lg-2"> -->
+              <td><img src="assets/images/contact.jpg" class="img-fluid" alt="Responsive image"></td>
+            <!-- </div>
+          </div> -->
         </tr>
       </tbody>
     </table>
@@ -84,11 +90,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4 text-left"><a class="nav-link" [routerLink]="['/quisuisje']"
+    <div class="col-md-4"><a class="nav-link" [routerLink]="['/quisuisje']"
         routerLinkActive="router-link-active" (click)="hautPage()">Qui suis-je?</a></div>
-    <div class="col-md-4 text-center"><a class="nav-link" (click)="hautPage()"
+    <div class="col-md-5"><a class="nav-link" (click)="hautPage()"
         style="color:#527BFF; cursor: pointer">Haut de la page</a></div>
-    <div class="col-md-4 col-md-offset-4 text-right"></div>
+    <div class="col-md-3"></div>
   </div>
 
 </div>

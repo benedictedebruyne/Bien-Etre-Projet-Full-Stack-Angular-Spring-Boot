@@ -19,7 +19,7 @@ export class AppointmentsService {
   public getAllAppointments(): Observable<Appointment[]> {
     return this.client.get<Appointment[]>(this.URL)
       .pipe(
-        tap(val => console.log(`BEFORE MAP: ${val}`)),
+        tap(val => console.log(`getAllAppointments - BEFORE MAP: ${val}`)),
         map(
           (jsonArray: Object[]) => jsonArray.map(jsonItem => AppointmentUtil.fromBackend(jsonItem))
         ),
@@ -33,6 +33,17 @@ export class AppointmentsService {
         tap(val => console.log(`BEFORE MAP: ${val}`)),
         map(
           (jsonArray: Object[]) => jsonArray.map(jsonItem => AppointmentUtil.fromBackend(jsonItem))
+        ),
+        tap(val => console.log(`AFTER MAP: ${val}`))
+      );
+  }
+
+  public getAllAppointmentsByUser(username: string): Observable<Appointment[]> {
+    return this.client.get<Appointment[]>(this.URL+ '/' + username)
+      .pipe(
+        tap(val => console.log(`BEFORE MAP: ${val}`)),
+        map(
+          (jsonArray: Object[]) => jsonArray.map(jsonItem => AppointmentUtil.fromBackendForUser(jsonItem))
         ),
         tap(val => console.log(`AFTER MAP: ${val}`))
       );

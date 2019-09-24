@@ -9,7 +9,10 @@
               <input formControlName="comment" type="text" class="form-control" name="" aria-describedby="helpId"
                 placeholder="RDV: Prénom et nom">
             </div>
-          </div>
+            <div *ngIf="form.get('comment').touched && form.get('comment').invalid" class="col-sx-5 text text-danger">
+                <div> Le prénom et le nom de la personne qui prend rendez-vous est obligatoire</div>
+              </div>
+            </div>
           <div class="form-group row">
             <div class="col-sx-4">
               <select formControlName="type">
@@ -71,4 +74,12 @@
       </div>
     </div>
   </div>
+</div>
+<br /> <br /> <br /> <br /> <br />
+<div class="row">
+  <div class="col-md-4"><a class="nav-link" [routerLink]="['/kinesiologie']"
+      routerLinkActive="router-link-active" (click)= "hautPage()">Kinésiologie</a></div>
+  <div class="col-md-5"><a class="nav-link" (click)= "hautPage()" style="color:#527BFF; cursor: pointer">Haut de la page</a></div>
+  <div class="col-md-3"><a class="nav-link" [routerLink]="['/quisuisje']"
+      routerLinkActive="router-link-active" (click)= "hautPage()">Qui suis-je?</a></div>
 </div>

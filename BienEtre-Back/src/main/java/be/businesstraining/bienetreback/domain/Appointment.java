@@ -12,8 +12,6 @@ import java.time.LocalDateTime;
 @Table(name = "Appointments")
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
 public class Appointment {
 
     @Id
@@ -26,9 +24,11 @@ public class Appointment {
     private String comment;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
+    @JoinColumn(name = "type_id")
     private AppointmentType type;
 
     public Appointment(AppointmentType type, LocalDateTime start, LocalDateTime end,String comment, User user) {
@@ -37,5 +37,61 @@ public class Appointment {
         this.user = user;
         this.type = type;
         this.comment = comment;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getStart() {
+        return start;
+    }
+
+    public void setStart(LocalDateTime start) {
+        this.start = start;
+    }
+
+    public LocalDateTime getEnd() {
+        return end;
+    }
+
+    public void setEnd(LocalDateTime end) {
+        this.end = end;
+    }
+
+    public Boolean getAllDay() {
+        return allDay;
+    }
+
+    public void setAllDay(Boolean allDay) {
+        this.allDay = allDay;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public AppointmentType getType() {
+        return type;
+    }
+
+    public void setType(AppointmentType type) {
+        this.type = type;
     }
 }

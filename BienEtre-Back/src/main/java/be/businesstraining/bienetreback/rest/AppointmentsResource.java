@@ -73,13 +73,21 @@ public class AppointmentsResource {
         return repository.findAppointmentsByStartAfterAndEndBefore(start, end);
     }
 
+    @GetMapping("/therapeut")
+    public List<Appointment> appointmentsForAUser() {
+        // Récupérer le thérapeute
+        User user = IUserRepository.findByUsername("therapeut");
+        LocalDateTime today = LocalDateTime.now();
+        return repository.findTop10AppointmentsByUserAndStartAfterOrderByStart(user, today);
+    }
+
     @GetMapping("/{username}")
     public List<Appointment> appointmentsForAUser(@PathVariable String username) {
 
         // Récupérer le Cient
         User user = IUserRepository.findByUsername(username);
         LocalDateTime today = LocalDateTime.now();
-        return repository.findTop10AppointmentsByUserAndStartAfterOrderByStart(user, today);
+        return repository.findAppointmentsByUser(user);
     }
 
     @PostMapping("/{username}")

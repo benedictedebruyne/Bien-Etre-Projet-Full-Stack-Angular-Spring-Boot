@@ -17,7 +17,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { LogoutResolver } from './resolvers/logout-resolver';
 import { SignupComponent } from './components/signup/signup.component';
 import { ContactComponent } from './components/contact/contact.component';
-
+import { CompteComponent } from './components/compte/compte.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent, pathMatch: 'full'},
@@ -33,6 +33,7 @@ const routes: Routes = [
   {path: 'rendezvous', component: RendezvousComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
+  {path: 'compte', component:CompteComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'logout', component: AccueilComponent, resolve: [LogoutResolver]},
   {path: '**', component: NotfoundComponent}

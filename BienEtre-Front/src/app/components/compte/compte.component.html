@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="col col-lg-10 offset-lg-1">
+    <div class="card offset-lg-2 col-lg-9">
+      <div class="card-header text-white" style="background-color: #663366; font-family: georgia,palatino; font-size: 12pt;">
+        <h4>Votre compte: {{user.username}}</h4>
+      </div>
+      <br>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <ul style="font-family: georgia,palatino; color: #ab5494;">Prénom</ul>
+              <ul style="font-family: georgia,palatino; color: #ab5494;">Nom</ul>
+              <ul style="font-family: georgia,palatino; color: #ab5494;">Adresse email</ul>
+            </td>
+            <td>
+              <ul style="color: #808080;">{{user.firstName}}</ul>
+              <ul style="color: #808080;">{{user.lastName}}</ul>
+              <ul style="color: #808080;"
+              >{{user.email}}</ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+    <br /> <br />
+    <div id='global' class='offset-lg-2 col-lg-9'>
+      <div id='calendar-container' class='col-sx-12 '>
+        <div id='calendar' style="display: inline-block;">
+          <full-calendar #calendar *ngIf="options" defaultView="timeGridWeek" minTime="08:00:00" maxTime="20:00:00"
+            locale=beLocale weekNumberCalculation="ISO" [buttonText]="{
+                  today: 'aujourdhui',
+                  month: 'mois',
+                  week: 'semaine',
+                  day: 'jour',
+                  list: 'liste'
+                }"
+            allDayText="journée entière" [customButtons]="{
+                  filter: {
+                    text: 'filter',
+                    click: 'open()'
+                    }
+                }"
+            [header]="{
+                  center: 'title',
+                  left: 'dayGridMonth,timeGridWeek,timeGridDay',
+                  right: 'prev, next today'
+                }"
+            [plugins]="calendarPlugins" [events]=myEvents>
+          </full-calendar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /> <br /> <br /> <br /> <br />
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-5"><a class="nav-link" (click)="hautPage()" style="color:#527BFF; cursor: pointer">Haut de la
+        page</a></div>
+    <div class="col-md-2"></div>
+  </div>

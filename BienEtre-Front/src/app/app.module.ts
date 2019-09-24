@@ -30,6 +30,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CompteComponent } from './components/compte/compte.component';
 
 
 
@@ -56,7 +57,8 @@ import { ContactComponent } from './components/contact/contact.component';
     LoginComponent,
     SignupComponent,
     SidebarComponent,
-    ContactComponent
+    ContactComponent,
+    CompteComponent
   ],
   imports: [
     BrowserModule,

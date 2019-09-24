@@ -78,6 +78,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/**").permitAll()   // Relaxer CORS
                 .antMatchers("/register/**").permitAll()   // Relaxer CORS
                 .antMatchers("/appointments/**").permitAll()
+                .antMatchers("/users/**").permitAll()
                 .antMatchers("/messages/**").permitAll()
                 .antMatchers("/newsletters/**").permitAll()
                 .anyRequest().authenticated();

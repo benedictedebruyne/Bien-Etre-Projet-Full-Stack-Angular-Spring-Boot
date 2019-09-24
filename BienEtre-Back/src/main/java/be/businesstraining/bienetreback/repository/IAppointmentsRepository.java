@@ -14,4 +14,5 @@ public interface IAppointmentsRepository extends JpaRepository<Appointment, Long
     List<Appointment> findAppointmentsByStart(LocalDateTime start);
     List<Appointment> findAppointmentsByStartAfterAndEndBefore(LocalDateTime start, LocalDateTime end);
     List<Appointment> findTop10AppointmentsByUserAndStartAfterOrderByStart(User user, LocalDateTime date);
+    List<Appointment> findAppointmentsByUser(User user);
 }
