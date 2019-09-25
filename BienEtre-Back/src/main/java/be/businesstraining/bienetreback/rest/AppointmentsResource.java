@@ -86,7 +86,6 @@ public class AppointmentsResource {
 
         // Récupérer le Cient
         User user = IUserRepository.findByUsername(username);
-        LocalDateTime today = LocalDateTime.now();
         return repository.findAppointmentsByUser(user);
     }
 

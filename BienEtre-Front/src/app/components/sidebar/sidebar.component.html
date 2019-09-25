@@ -56,7 +56,11 @@
             <button type="submit" class="btn btn-primary" style="background-color: #663366"
               [disabled]="form.invalid">Envoyer</button>
           </div>
-        </div>
+          <div *ngIf="resultOnSubmit">
+            <br>
+            <p style="font-size: 18px">{{messageReceived}}</p>
+          </div>
+      </div>
         <div class="form-group row">
           <div class="col-lg-8">
             Vous affirmez avoir pris connaissance de la Politique de confidentialité. Vous pouvez vous désinscrire à

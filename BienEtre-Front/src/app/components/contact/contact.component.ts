@@ -1,6 +1,6 @@
 import { MessagesService } from '../../services/messages.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageUtil } from 'src/app/utilities/MessageUtil';
@@ -39,7 +39,6 @@ resultOnSubmit = false;
  onSubmit(c: any) {
 
   let msg = this.messagesService.createMessage(c.username, c.email, c.object, c.message);
-  this.resultOnSubmit = true;
 
   console.log('onSubmit ======================= CONVERSION DE L \'APPOINTMENT =============');
   console.log(MessageUtil.toBackend(msg));
@@ -50,7 +49,6 @@ resultOnSubmit = false;
     (succes) => {
       console.log(succes);
       this.messageReceived = "Votre message est bien envoyé";
-
     },
     (err) => {
       console.log(err);
@@ -59,6 +57,8 @@ resultOnSubmit = false;
 
     }
   );
+  this.resultOnSubmit = true;
+  this.form.reset('');
 }
 hautPage() {
   window.scrollTo(0, 0);

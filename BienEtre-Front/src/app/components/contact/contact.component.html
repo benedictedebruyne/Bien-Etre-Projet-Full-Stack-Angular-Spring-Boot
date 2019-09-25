@@ -85,7 +85,11 @@
             <button type="submit" class="btn btn-primary" style="background-color: #663366"
               [disabled]="form.invalid">Envoyer</button>
           </div>
-        </div>
+          <div *ngIf="resultOnSubmit">
+              <br>
+              <p style="font-size: 18px">{{messageReceived}}</p>
+            </div>
+          </div>
       </form>
     </div>
   </div>

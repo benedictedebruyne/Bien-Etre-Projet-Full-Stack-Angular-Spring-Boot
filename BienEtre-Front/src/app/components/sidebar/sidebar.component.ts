@@ -41,7 +41,6 @@ export class SidebarComponent implements OnInit {
     onSubmit(c: any) {
 
       let news = this.newslettersService.createNewsletter(c.username, c.email);
-      this.resultOnSubmit = true;
 
       console.log('onSubmit ======================= CONVERSION DE L \'APPOINTMENT =============');
       console.log(NewsletterUtil.toBackend(news));
@@ -61,5 +60,9 @@ export class SidebarComponent implements OnInit {
 
         }
       );
+
+      this.resultOnSubmit = true;
+      this.form.reset('');
+
     }
    }
